@@ -1,0 +1,46 @@
+@import 'src/styles/index';
+
+$search-height: 3.4rem;
+$search-button-width: 4.8rem;
+$search-radius: .6rem;
+
+.search {
+  box-shadow: none;
+  height: $search-height;
+  width: 100%;
+  position: relative;
+}
+
+.search__input {
+  background-color: white;
+  color: #333;
+  border-radius: $search-radius;
+  font-size: 1.6rem;
+  width: 100%;
+  height: $search-height;
+  box-sizing: border-box;
+  padding: 1rem $search-button-width+1rem 1rem 1rem;
+  border: 1px solid $border-color;
+}
+
+.search__button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: $search-button-width;
+  height: $search-height; 
+  color: $text-color;
+  border-radius: 0 $search-radius $search-radius 0;
+  @include button-style();
+}
+
+.search__button__icon {
+  fill: $icon-fill;
+  width: 1.8rem;
+  height: 2.8rem;
+  pointer-events: none;
+}

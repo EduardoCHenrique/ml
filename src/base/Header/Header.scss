@@ -1,0 +1,28 @@
+@import 'src/styles/index';
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $header-height;
+  background-color: $ml-yellow;
+}
+
+.header__logo {
+  height: 100%;
+  font-size: 0;
+  margin-right: 2rem;
+}
+
+.header__logo__image {
+  height: 100%;
+}
+
+.header__content {
+  width: 80%;
+  margin: 0 auto;
+  height: $header-height;
+  display: flex;
+  padding: 1rem;
+  box-sizing: border-box;
+}

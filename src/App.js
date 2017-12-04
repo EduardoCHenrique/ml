@@ -9,7 +9,7 @@ import Icon from './base/Icon'
 import Search from './base/Search'
 import Header from './base/Header'
 import Home from 'src/views/Home'
-import ItemDetail from 'src/views/ItemDetail'
+import ProductDetail from 'src/views/ProductDetail'
 
 
 class App extends Component {
@@ -21,8 +21,8 @@ class App extends Component {
           <Switch>
             <Route exact path={"/"} component={Home}/>
             <Route exact path={"/search"} component={Home}/>
-            </Switch>
-            <Route path="/item/:id" component={ItemDetail}/>
+          </Switch>
+          <Route path="/item/:id" component={ProductDetail}/>
         </div>
       </Router>
     );

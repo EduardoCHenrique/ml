@@ -1,5 +1,0 @@
-{
-  "name": "ItemDetail",
-  "private": true,
-  "main": "./ItemDetail.state.js"
-}

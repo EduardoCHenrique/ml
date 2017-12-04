@@ -34,6 +34,7 @@ const ProductRepository =  {
   async getProductDetail(id) {
     const productData = await this.getProductById(id);
     const productDescription = await this.getProductDescription(id);
+    console.log('productData', productData, productDescription);
     
     return Promise.resolve(
       new DetailProductEntity({

@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import queryString from 'query-string'
+import { connect } from 'react-redux';
 import {withRouter} from "react-router-dom";
+
 import ProductsList from 'src/base/ProductsList';
 import ProductRepository from 'src/infra/repositories/ProductRepository'
 import Home from './Home'
 import './Home.scss'
 
-import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
   return {

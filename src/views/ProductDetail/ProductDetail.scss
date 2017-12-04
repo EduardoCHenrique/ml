@@ -1,0 +1,9 @@
+@import 'src/styles/index';
+
+.product-detail__view {
+  padding: 3rem 0;
+}
+
+.product-detail {
+  @include inner-content()
+}

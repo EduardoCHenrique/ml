@@ -34,7 +34,7 @@ class HomeState extends Component {
   componentWillReceiveProps(nextProps) {
     const { search = '' } = queryString.parse(nextProps.location.search)
     const isNotTheSameSearch = search.toLowerCase() !== nextProps.search.toLowerCase()
-
+    
     if (isNotTheSameSearch) {
       nextProps.history.push({ pathname: '/', search: `?search=${nextProps.search}`})
       this.getProducts(nextProps.search)

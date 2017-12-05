@@ -1,25 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import PropTypes from 'prop-types'
 import Search from 'src/base/Search'
 import logo from 'src/assets/images/logo.png'
 
 import './Header.scss'
 
-const Header = () => {
+const logoHandleClick = (dispatch) => {
+  dispatch({  type: 'SEARCH',  search: '' })
+}
+
+const Header = (props) => {  
   return (
     <header className="header">
       <div className="header__content">
-        <Link to="/">
-          <h1 className="header__logo">
-            <img src={logo} className="header__logo__image" />
-            Mercado Livre
-          </h1>
-        </Link>
+        <h1 className="header__logo" onClick={logoHandleClick.bind(this, props.dispatch)}>
+          <img src={logo} className="header__logo__image" />
+          Mercado Livre
+        </h1>
         <Search />
       </div>
     </header>
   )
+}
+
+Header.propTypes = {
+  dispatch: PropTypes.func
 }
 
 export default Header

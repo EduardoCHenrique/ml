@@ -9,7 +9,7 @@ const renderListItem = (item, index) => <ListItem {...item} key={index} />
 
 const List = (props) =>  {
   const {products} = props
-  return (
+  return products.length && (
     <ul className="list">
       {products && products.map(renderListItem)}
     </ul>

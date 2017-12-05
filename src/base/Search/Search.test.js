@@ -1,21 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { expect } from 'chai'
-import { random } from 'faker'
-import { spy, assert } from 'sinon'
+import { assert, stub } from 'sinon'
 
 import Search from './Search'
 
-const defaultHandleChange = () => {}
-const defaultSearch = () => {}
-const defaultHandleSearch = () => {}
-const defaultOnKeyDown = () => {}
-
 describe('Search Component', () => {
   const props = {
-    handleChange: defaultHandleChange, 
-    search: defaultSearch,
-    handleSearch: defaultHandleSearch
+    handleChange: stub(), 
+    search: stub(),
+    handleSearch: stub()
   }
 
   const wrapper = shallow(<Search {...props} />)
@@ -29,7 +23,17 @@ describe('Search Component', () => {
   })
 
   it('should render and input passing handleChange, value and onKeyDown props ', () => {
-    expect(wrapper.find('.search__input').props().onChange).to.equal(defaultHandleChange)
-    expect(wrapper.find('.search__input').props().value).to.equal(defaultSearch)
+    expect(wrapper.find('.search__input').props().onChange).to.equal(props.handleChange)
+    expect(wrapper.find('.search__input').props().value).to.equal(props.search)
+  })
+
+  it('should call handleSearch method with props', () => {
+    wrapper.find('.search__button').simulate('click')
+    assert.calledOnce(props.handleSearch)    
+  })
+
+  it('should call handleChange when changing input value manualy', () => {
+    wrapper.find('.search__input').simulate('change')
+    assert.calledOnce(props.handleChange)    
   })
 })

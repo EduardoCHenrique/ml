@@ -26,9 +26,9 @@ Object.values = (object) => Object.keys(object).map(key => object[key])
 Object.assign(global, {
   document: doc,
   window: win,
-  navigator: win.navigator,
+  Element: win.Element,
+  navigator: win.navigator
 })
-
 
 Object.keys(window).forEach((key) => {
   if (!(key in global)) {
@@ -36,7 +36,6 @@ Object.keys(window).forEach((key) => {
   }
 })
 
-const React = require('react')
 const chai = require('chai')
 const chaiEnzyme = require('chai-enzyme')
 
@@ -44,3 +43,11 @@ chai.use(chaiEnzyme())
 
 const error = global.console.error
 
+sinon.stub(console, 'error').callsFake(function ()  {
+  const errorArguments = Array.from(arguments)
+  const [warning] = errorArguments
+
+  if (warning && warning.indexOf('Use `PropTypes.checkPropTypes()`') > -1) { return }
+
+  error.apply(console, errorArguments)
+})

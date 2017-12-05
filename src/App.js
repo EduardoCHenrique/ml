@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter, Route, Router, Switch } from 'react-router-dom'
-import createHashHistory from 'history/createHashHistory';
+import { Route, Router, Switch } from 'react-router-dom'
+import createHashHistory from 'history/createHashHistory'
 
-import queryString from 'query-string'
-
-import Icon from './base/Icon'
-import Search from './base/Search'
 import Header from './base/Header'
 import Home from 'src/views/Home'
 import ProductDetail from 'src/views/ProductDetail'
@@ -25,7 +21,7 @@ class App extends Component {
           <Route path="/item/:id" component={ProductDetail}/>
         </div>
       </Router>
-    );
+    )
   }
 }
 
@@ -33,4 +29,4 @@ App.propTypes = {
   children: PropTypes.node
 }
 
-export default App;
+export default App

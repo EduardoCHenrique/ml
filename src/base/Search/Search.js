@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 import Icon from 'src/base/Icon'
 
@@ -9,7 +9,7 @@ class Search extends Component {
   constructor(props) {
     super(props)
   }
-  
+
   keyPress = (e) => {
     if(e.keyCode == 13){
       this.props.handleSearch()
@@ -17,7 +17,7 @@ class Search extends Component {
   }
 
   render() {
-    const { handleChange, search, handleSearch } = this.props;
+    const { handleChange, search, handleSearch } = this.props
     
     return(
       <div className="search">
@@ -39,7 +39,10 @@ class Search extends Component {
 
 
 Search.propTypes = {
-  handleSearch: PropTypes.func
+  handleSearch: PropTypes.func,
+  handleChange: PropTypes.func,
+  search: PropTypes.string
+  
 }
 
 export default Search

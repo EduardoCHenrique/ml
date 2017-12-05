@@ -1,0 +1,17 @@
+@import 'src/styles/index';
+
+$button-color: #3483fa;
+
+.button {
+  border-radius: .6rem;
+  background-color: $button-color;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: block;
+
+  &--medium {
+    padding: 12px 24px;
+    font-size: 1.4rem;
+  }
+}

@@ -1,4 +1,4 @@
-const Joi = require('joi');
+const Joi = require('joi')
 const { Entity, validatorAdapter } = require('speck-entity')
  
 const adapter = validatorAdapter('joi', Joi)

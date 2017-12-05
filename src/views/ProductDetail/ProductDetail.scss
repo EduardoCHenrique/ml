@@ -2,8 +2,53 @@
 
 .product-detail__view {
   padding: 3rem 0;
+  height: calc(100% - #{$header-height});
+  overflow: scroll;
+  box-sizing: border-box;
 }
 
 .product-detail {
-  @include inner-content()
+  @include inner-content();
+}
+
+.product-detail__main-info {
+  flex-flow: column;
+  max-width: 42rem;
+  display: flex;
+}
+.product-detail__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-detail__title {
+  font-size: 2.6rem;
+}
+
+.product-detail__small-info {
+  font-size: 1.4rem;
+  color: $secondary-text-color;
+  margin-top: 1rem;
+}
+
+.product-detail__price {
+  font-size: 3.4rem;
+}
+
+.product-detail__button {
+  margin: 3rem 0;
+}
+
+.product-detail__description-title {
+  font-size: 2rem;
+}
+
+.product-detail__description {
+  font-size: 1.4rem;
+}
+
+.product-detail__view--loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

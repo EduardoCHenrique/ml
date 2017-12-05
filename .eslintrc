@@ -1,0 +1,99 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "sort-class-members",
+    "react",
+    "mocha",
+    "jsx-a11y",
+    "import"
+  ],
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+  "globals": {
+    "API_HOST": true,
+    "SCUP_ACCOUNTS_URL": true,
+    "CXM_COOKIE_DOMAIN": true,
+    "PUSHER_KEY": true,
+    "GA_TRACKING_NUMBER": true,
+    "HOST_NAME": true,
+    "TAG_MANAGEMENT": false,
+    "validateOthersProps": true,
+    "validateClassNameMerge": true,
+    "GTM_ID": true,
+    "gtm": false,
+    "LIVE_CHAT_PRODUCTION_READY": true,
+    "SCUP_LIVE_CHAT_API": true,
+    "INSTAGRAM_PRODUCTION_READY": false,
+    "hasShownUnsupportedDeviceAlert": true,
+    "TWITTER_PRODUCTION_READY": false,
+    "TWITTER_DIRECT_MESSAGES_PRODUCTION_READY": false,
+    "TEAM_PRODUCTION_READY": false,
+    "HELP_DOCS_URL": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-unused-vars": 1,
+    "indent": [1, 2, {"SwitchCase": 1}],
+    "semi": [2, "never"],
+    "no-var": 2,
+    "prefer-const": 1,
+    "no-console": 1,
+    "no-debugger": 1,
+    "no-unreachable": 1,
+    "react/self-closing-comp": 2,
+    "react/jsx-indent": [1, 2],
+    "react/jsx-indent-props": [1, 2],
+    "react/jsx-pascal-case": 2,
+    "react/jsx-curly-spacing": [1, "never"],
+    "react/no-did-mount-set-state": 0,
+    "react/jsx-no-bind": ["off"],
+    "sort-class-members/sort-class-members": [2, {
+      "order": [
+        "[static-properties]",
+        "[static-methods]",
+        "[lifecycle]",
+        "/^on.*$/",
+        "[everything-else]",
+        "render",
+        "/^render.+$/"
+      ],
+      "groups": {
+        "lifecycle": [
+          "displayName",
+          "propTypes",
+          "contextTypes",
+          "childContextTypes",
+          "mixins",
+          "statics",
+          "defaultProps",
+          "constructor",
+          "getDefaultProps",
+          "getInitialState",
+          "state",
+          "getChildContext",
+          "componentWillMount",
+          "componentDidMount",
+          "componentWillReceiveProps",
+          "shouldComponentUpdate",
+          "componentWillUpdate",
+          "componentDidUpdate",
+          "componentWillUnmount"
+        ]
+      }
+    }],
+    "mocha/no-exclusive-tests": "error",
+    "mocha/no-skipped-tests": "warn",
+    "mocha/no-pending-tests": "error"
+  }
+}

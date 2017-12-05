@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Search from './Search'
-import { connect } from 'react-redux';
-import { browserHistory } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 function mapStateToProps(state) {
   return {
     search: state.search
-  };
+  }
 }
 
 class SearchState extends Component {
@@ -29,12 +28,7 @@ class SearchState extends Component {
   }
 
   handleSearch = () => {
-    this.props.dispatch({  type: 'SEARCH',  search: this.state.search });
-    console.log('this.props', this.props);
-    // browserHistroy.push({
-    //   pathname: 'some_path',
-    //   query
-    // })
+    this.props.dispatch({  type: 'SEARCH',  search: this.state.search })
   }
 
   clearAndCloseSearch = () => {
@@ -58,7 +52,8 @@ class SearchState extends Component {
 SearchState.propTypes = {
   search: PropTypes.string,
   className: PropTypes.string,
+  dispatch: PropTypes.func
 }
 
 
-export default connect(mapStateToProps)(SearchState);
+export default connect(mapStateToProps)(SearchState)

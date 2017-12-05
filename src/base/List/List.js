@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import ListItem from 'src/base/ListItem'
 
-import './ProductsList.scss';
+import './List.scss'
 
 const renderListItem = (item, index) => <ListItem {...item} key={index} /> 
 
-const ProductsList = (props) =>  {
+const List = (props) =>  {
   const {products} = props
   return (
-    <ul className="products-list">
+    <ul className="list">
       {products && products.map(renderListItem)}
     </ul>
-  );
+  )
 }
 
-ProductsList.propTypes = {
+List.propTypes = {
   products: PropTypes.array
 }
 
-export default ProductsList;
+export default List

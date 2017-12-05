@@ -29,7 +29,10 @@
     "tdd": "yarn test -- -w --reporter min",
     "test:uniq": "TZ=utc NODE_ENV=test NODE_PATH=./ mocha -c -S --recursive --compilers js:babel-core/register --require ignore-styles --require src/tests/setup.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lint:js": "eslint src tests features --max-warnings 150",
+    "lint:js:fix": "eslint --fix web tests features",
+    "lint": "yarn lint:js"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.16",
@@ -51,6 +54,12 @@
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-sort-class-members": "^1.2.2",
     "faker": "^4.1.0",
     "file-loader": "^1.1.5",
     "ignore-styles": "^5.0.1",

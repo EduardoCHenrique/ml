@@ -33,7 +33,7 @@ $search-radius: .6rem;
   cursor: pointer;
   width: $search-button-width;
   height: $search-height; 
-  color: $text-color;
+  color: $primary-text-color;
   border-radius: 0 $search-radius $search-radius 0;
   @include button-style();
 }

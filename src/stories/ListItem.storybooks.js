@@ -1,8 +1,8 @@
-import React from 'react';
-import faker from 'faker';
+import React from 'react'
+import faker from 'faker'
 
-import { storiesOf } from '@storybook/react';
-import ListItem from '../base/ListItem';
+import { storiesOf } from '@storybook/react'
+import ListItem from '../base/ListItem'
 
 const props = {
   price: faker.commerce.price(),

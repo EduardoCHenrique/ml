@@ -61,7 +61,7 @@ HomeState.propTypes = {
   history: PropTypes.object,
   location: PropTypes.object,
   dispatch: PropTypes.func,
-  search: PropTypes.string,
+  search: PropTypes.string
 }
 
 export default connect(mapStateToProps)(HomeState)

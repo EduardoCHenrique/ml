@@ -15,3 +15,8 @@
 ### Storybook
 
  - ```npm run storybook``` || ```yarn storybook```
+
+
+### Build
+
+- ```npm run build``` || ```yarn build```

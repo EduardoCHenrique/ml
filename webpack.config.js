@@ -1,7 +1,5 @@
 const path = require('path')
 
-console.log('09087657897654678');
-
 const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin')
 
 module.exports = {

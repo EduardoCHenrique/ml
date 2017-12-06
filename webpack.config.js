@@ -1,23 +1,30 @@
 const path = require('path')
+
+console.log('09087657897654678');
+
 const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin')
-
-
 
 module.exports = {
   context: __dirname + "/",  
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: ['babel-polyfill', './src'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
     publicPath: '/'
   },
   resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ],
     alias: {
       src: path.resolve(__dirname, 'src'),
       assets: path.resolve(__dirname, 'src/assets/'),
       storybook: path.resolve(__dirname, '.storybook'),
       joi: 'joi-browser'
-    }
+    },
+    descriptionFiles: ['package.json'],
+    extensions: ['.js', '.scss']
   },
   module: {
     rules: [

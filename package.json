@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "react-scripts build",
+    "build": "webpack",
     "test": "yarn test:uniq -- src/**/*.test.js --env test",
     "tdd": "yarn test -- -w --reporter min",
     "test:uniq": "TZ=utc NODE_ENV=test NODE_PATH=./ mocha -c -S --recursive --compilers js:babel-core/register --require ignore-styles --require src/tests/setup.js",
